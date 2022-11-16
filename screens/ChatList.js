@@ -1,10 +1,13 @@
-import React,{useState} from "react";
+import React,{useState,useEffect} from "react";
 import { Text, View } from "react-native";
 import { List, Avatar, Divider, FAB, Portal, Dialog,Button,TextInput } from "react-native-paper";
+import { collection, Firestore,addDoc} from "firebase/firestore"; 
+import firebase from "firebase/app";
 
 
 const ChatList = () => {
     const [isDialogVisible, setIsDialogVisible]=useState(false);
+ 
     return (
         <View style={{ flex: 1 }}>
             <List.Item title="User"
